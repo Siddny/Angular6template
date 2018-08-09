@@ -1,0 +1,35 @@
+<div class="container">
+	<mat-card class="row">
+		<form #loginForm="ngForm">
+
+			<mat-form-field class="col-md-12">
+				<input required matInput placeholder="Username" [(ngModel)]="post_user.username" name="username">
+			</mat-form-field>
+
+			<mat-form-field class="col-md-12">
+				<input 
+					required
+					minlength="8"
+					type="password" 
+					matInput 
+					placeholder="Password" 
+					[(ngModel)]="post_user.password" 
+					name="password">
+			</mat-form-field>
+			<div>
+				<button [disabled]="loginForm.invalid" mat-raised-button (click)="loginUser()">Post!</button>
+				<!-- <button  mat-raised-button (click)="loginForm.resetForm({})">Reset</button> -->
+			</div>
+		</form>
+	</mat-card>
+
+	<!-- <mat-card class="row">
+		<div *ngFor="let item of users">
+			<ul>
+				<li>{{item.username}} {{item.password}}</li>
+			</ul>
+		</div>
+	</mat-card> -->
+
+
+</div>
